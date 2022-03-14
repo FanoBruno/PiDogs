@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap');
+
+.landing{
+    background-image: url("https://www.petfanmx.com/imageHandler/g.ashx?s=repo&ID=1868");
+    width: 99vw;
+    height: 99vh;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.conteiner{
+    width: 99vw;
+    height: 99vh;
+    overflow: hidden;
+}
+
+.button {
+    background-color: #000000;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 1000;
+    position: absolute;
+    top: 5%;
+    right: 42%;
+    border-radius: 20px;
+  }
+
+.button:hover {
+    background-color: #ffffff;
+    color: rgb(10, 10, 10);
+  }

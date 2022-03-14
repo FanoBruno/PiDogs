@@ -1,0 +1,11 @@
+.paginado{
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+    align-content: center;
+    margin-top: 40px;
+}
+
+.nav{
+    cursor: pointer;
+}

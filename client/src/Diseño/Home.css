@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap');
+
+.Cartas{
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-around;
+    
+}
+
+.crearPerro{
+    display: flex;
+    flex-direction: row-reverse;
+    text-decoration: none;
+    padding-top: 10px;
+    padding-right: 20px;
+    color:black;
+}
+
+.home{
+    /* background-color: rgb(175, 175, 175) */
+    background-image:  url("https://a-static.besthdwallpaper.com/paisaje-verde-papel-pintado-3554x1999-1626_53.jpg");
+    background-repeat: no-repeat;
+    
+}
+
+.nodecoration{
+    text-decoration: none;
+}
+
+.filtros{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.busqueda{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
