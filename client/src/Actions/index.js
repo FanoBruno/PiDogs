@@ -43,12 +43,17 @@ export function filterTemp (payload) {
 
 export function getByName (payload){
     return async function(dispatch){
+    try{
         var name = await axios.get(`http://localhost:3001/dogs?name=${payload}`)
         return dispatch({
             type: "GET_BY_NAME",
             payload: name.data
         })
     }
+     catch (error){
+        alert("Write a valid dog's breed")
+    }
+  }  
 }
 
 export function getById (params){
@@ -85,6 +90,13 @@ export function addFavorite(payload){
 export function removeFavorite(payload){
     return{
         type: "REMOVE_FAVORITE",
+        payload
+    }
+}
+
+export function removeDetails(payload){
+    return{
+        type: "REMOVE_DETAILS",
         payload
     }
 }

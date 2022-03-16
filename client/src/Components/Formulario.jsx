@@ -86,9 +86,16 @@ export default function Formulario(){
     }
 
     function handleSelected(e){
+        function add(e){
+            if(inputs.temperaments.includes(e.target.value)){
+                return [...inputs.temperaments]
+            } else {
+                return [...inputs.temperaments, e.target.value]
+            }
+        }
         setInputs({
             ...inputs,
-            temperaments: [...inputs.temperaments, e.target.value]
+            temperaments: add(e)
         })
     }
         
@@ -157,7 +164,6 @@ export default function Formulario(){
             <div>
                 <button type="submit" disabled={deshabBoton} onClick={e => handleSubmit(e)} className="boton">CREATE DOG</button>
             </div>
-            
         </div>
     )
 }

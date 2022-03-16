@@ -76,7 +76,7 @@ export default function Home (){
         <div className="home">
             <Link to="/dog" className="crearPerro" >Creat new dog</Link>
             <Link to="/favorites"  className="crearPerro">Favourites</Link>
-            <h1>Puppys fan club</h1>
+            <h1>PUPPYS FAN CLUB</h1>
             <SearchBar className="search"/>
             
             
@@ -94,7 +94,7 @@ export default function Home (){
                 <select onChange={e => handleTamaño(e)}>
                     <option selected>Size</option>
                     <option value="all">All</option>
-                    <option value="verys">Very samll</option>
+                    <option value="verys">Very small</option>
                     <option value="small">Small</option>
                     <option value="medium">Medium</option>
                     <option value="large">Big</option>
@@ -136,7 +136,7 @@ export default function Home (){
                                  )
                         } else {
                             return (
-                                <Card  name={d.name} weight_min={d.weight_min} weight_max={d.weight_max} temperaments={d.temperaments[0].name} key={d.id} img={d.img} id={d.id}/>                           
+                                <Card  name={d.name} weight_min={d.weight_min} weight_max={d.weight_max} temperaments={d.temperaments[0]?.name} key={d.id} img={d.img} id={d.id}/>                           
                                 )
                             }
                         }                

@@ -1,7 +1,7 @@
 .fondoFav{
-    background-color: #40916c;
+    background-color: rgb(241, 234, 234);;
     overflow: hidden;
-    height: 2600px
+    /* height: 2600px */
 }
 
 .navegation{

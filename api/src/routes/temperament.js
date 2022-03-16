@@ -20,7 +20,7 @@ router.get("/", async (req, res) => {
             }
         })
         const allTemp = await Temperament.findAll()
-        return res.send(allTemp)
+        return res.status(200).send(allTemp)
     } catch(error){
         res.send(error)
     }

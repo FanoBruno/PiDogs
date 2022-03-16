@@ -9,7 +9,7 @@ import Favorite from './Components/Favorite';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter >
     <div className="App">
       <Switch>
         <Route exact path="/" component={LandingPage}/>

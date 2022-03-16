@@ -132,6 +132,11 @@ export default function rootReducer (state = initialState, action){
                 ...state,
                 favorites: hola
             }
+        case "REMOVE_DETAILS":
+            return{
+                ...state,
+                details: []
+            }
         default:
             return state
     }

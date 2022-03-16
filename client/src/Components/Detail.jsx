@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {useParams} from "react-router-dom"
-import { getById } from "../Actions";
+import { getById, removeDetails } from "../Actions";
 import Details from "./Details";
 import "../Diseño/Detail.css"
+import { Link } from "react-router-dom";
 
 export default function Detail(){
     
@@ -11,6 +12,9 @@ export default function Detail(){
     const details = useSelector((state) => state.details)
     const {id} = useParams()
     
+    function handleState(){
+        dispatch(removeDetails())
+    }
 
     useEffect(() => {
         dispatch(getById(id))
@@ -23,7 +27,9 @@ export default function Detail(){
                     var temps = e.temperaments.map(e => e.name).toString()
                     return(
                         <div className="detail">
-
+                            <div className="navegation">
+                                <Link to="/home" className="navegationdos" onClick={() => handleState()}>Home</Link>
+                            </div>
                        <Details 
                     key={e?.id}
                     name={e?.name}
@@ -41,7 +47,9 @@ export default function Detail(){
                 } else {
                     return(
                         <div className="detail">
-
+                            <div className="navegation">
+                                <Link to="/home" className="navegationdos" onClick={() => handleState()}>Home</Link>
+                            </div>
                         <Details 
                             key={e?.id}
                             name={e?.name}
@@ -59,7 +67,9 @@ export default function Detail(){
             }
             return(
                 <div className="detail" key={e?.id}>
-
+                    <div className="navegation">
+                        <Link to="/home" className="navegationdos" onClick={() => handleState()}>Home</Link>
+                     </div>
                 <Details 
                     key={e?.id}
                     name={e?.name}

@@ -8,7 +8,7 @@ export default function Card({id, name, img, weight_min, weight_max, height_min,
     return(
         <div key={id} className="card">
             <Favorites id={id} name={name} img={img} />
-            <h2>{name}</h2>
+            <h2 className="name">{name}</h2>
             <Link to={`/home/${id}`} key={id} className="nodecoration">
             <img src={img} alt="img not fount" width="250px" height="150px"/>
             </Link>

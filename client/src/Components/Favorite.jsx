@@ -12,6 +12,7 @@ export default function Favorite(){
 
     function handleDelete(e){
         dispatch(removeFavorite(e.id))
+        alert("Breed eliminated")
     }
     
     

@@ -10,13 +10,11 @@ router.get("/", async (req, res) => {
 
         if(name){
             const raza = allDogs.filter(el => el.name.toLowerCase().includes(name.toLowerCase()))
-            if(!raza.length){
-                res.send("Esta raza no existe")
-            } else {
-                res.status(200).send(raza)
-            }
+            raza.length ?
+            res.status(200).send(raza):
+            res.status(404).send("Error: invalid breed")
         } else {
-            res.status(200).json(allDogs)
+            res.status(200).send(allDogs)
         }
     } catch(error){
         return res.send(error)
@@ -31,9 +29,9 @@ router.get("/:idRaza", async (req, res) => {
         if(idRaza){
             let idDog = allDogs.filter(e => e.id == idRaza)
             if(idDog.length){
-                res.send(idDog)
+                res.status(200).send(idDog)
             } else{
-                res.send("Raza no encontrada")
+                res.status(404).send("Raza no encontrada")
             }
         }
     } catch(error){
