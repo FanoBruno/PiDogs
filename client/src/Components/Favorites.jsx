@@ -7,7 +7,6 @@ export default function Favorites({id, name, img}) {
    var dispatch = useDispatch()
 
     function handleClick(){
-        alert("Raza agregada a favoritos")
         dispatch(addFavorite({id, name, img}))
     }
 

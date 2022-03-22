@@ -14,7 +14,7 @@ router.post("/", async (req, res) => {
             height_min,
             height_max,
             life_span,
-            img
+            img,
         })
 
     let temperamentDb = await Temperament.findAll ({

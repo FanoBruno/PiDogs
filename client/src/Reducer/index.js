@@ -117,10 +117,12 @@ export default function rootReducer (state = initialState, action){
         case "ADD_FAVORITE":
             console.log(state.favorites)
             if(state.favorites?.find(e => e.id === action.payload.id)){
+                alert("This breed is already in favourites")
                 return{
                     ...state
                 }
             } else {
+                alert("Breed add to favourites succesfully")
                 return{
                 ...state,
                 favorites: [...state.favorites, action.payload]

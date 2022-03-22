@@ -92,7 +92,6 @@ export default function Home (){
                     <option value="api">Already created</option>
                 </select>
                 <select onChange={e => handleTamaño(e)}>
-                    <option selected>Size</option>
                     <option value="all">All</option>
                     <option value="verys">Very small</option>
                     <option value="small">Small</option>
@@ -151,6 +150,7 @@ export default function Home (){
                 perrosxPagina={perrosxPagina}
                 allDogs={allDogs?.length}
                 paginado={paginado}
+                paginaActual={paginaActual}
                 />
         </div>
     )
