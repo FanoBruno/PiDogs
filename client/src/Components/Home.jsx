@@ -144,7 +144,7 @@ export default function Home (){
                             }
                         }                
                         return (
-                                <Card  name={d.name} weight_min={d.weight_min} weight_max={d.weight_max} temperaments={d.temperaments} key={d.id} img={d.img} id={d.id} />                            
+                                <Card  name={d.name} weight_min={d.weight_min} weight_max={d.weight_max} temperaments={d.temperaments} key={d.id} img={d.img} id={d.id} handleRemove={handleRemove}/>                            
                     )    
                 })
             }                

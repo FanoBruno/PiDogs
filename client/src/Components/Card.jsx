@@ -4,11 +4,12 @@ import Favorites from "./Favorites";
 import "../Diseño/Home.css"
 import { Link } from "react-router-dom";
 
-export default function Card({id, name, img, weight_min, weight_max, height_min, height_max, life_span, temperaments, remove, handleRemove}){
+export default function Card({id, name, img, weight_min, weight_max, height_min, height_max, life_span, temperaments, handleRemove}){
     
     return(
         <div key={id} className="card">
-            <button name="id" value={id} onClick={e => handleRemove(e)} className="remove">❌</button>
+            {typeof id === "string"? 
+            <button name="id" value={id} onClick={e => handleRemove(e)} className="remove">❌</button> : ""}
             <Favorites id={id} name={name} img={img} />
             <h2 className="name">{name}</h2>
             <Link to={`/home/${id}`} key={id} className="nodecoration">
