@@ -39,4 +39,18 @@ router.get("/:idRaza", async (req, res) => {
     }
 })
 
+router.delete("/", (req, res) => {
+    const {id} = req.body
+    Dog.destroy({
+        where: {id}
+    })
+    .then((post) => {
+        res.status(200).json({code:200, message: "Post delete", deletedPost: post})
+    })
+    .catch((error) => {
+        res.status(500).json({status:500, message: "Error", Error: error})
+    })
+})
+
+
 module.exports = router

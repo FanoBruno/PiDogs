@@ -100,3 +100,17 @@ export function removeDetails(payload){
         payload
     }
 }
+
+/* export function deleteDog(payload){
+    return async function (dispatch){
+        var borrar = await axios.delete("/dogs")
+        return dispatch({
+            type: "DELETE_DOG",
+            payload: borrar
+        })
+    }
+} */
+
+export const deleteDog = payload => async dispatch => {
+    return await axios.delete('/dogs', {data: payload});
+};

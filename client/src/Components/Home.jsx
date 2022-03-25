@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import {useDispatch, useSelector} from "react-redux"
-import { filterAlf, filterDb, getPerritos, getTemperamentos, filterTemp, filterSize } from "../Actions";
+import { filterAlf, filterDb, getPerritos, getTemperamentos, filterTemp, filterSize, deleteDog } from "../Actions";
 import { Link } from "react-router-dom";
 import Card from "./Card";
 import Paginado from "./Paginado";
@@ -70,7 +70,11 @@ export default function Home (){
         setPaginaActual(1)
     }
 
-
+    function handleRemove(e){
+        e.preventDefault()
+        dispatch(deleteDog({id: e.target.value}))
+        dispatch(getPerritos())
+    }
 
     return (
         <div className="home">
@@ -131,16 +135,16 @@ export default function Home (){
                         if(d.temperaments.length > 1){
                             var temps = d.temperaments.map(d => d.name).toString()
                             return (
-                                    <Card  name={d.name} weight_min={d.weight_min} weight_max={d.weight_max} temperaments={temps} img={d.img} key={d.id} id={d.id}/>
+                                    <Card  name={d.name} weight_min={d.weight_min} weight_max={d.weight_max} temperaments={temps} img={d.img} key={d.id} id={d.id} handleRemove={handleRemove}/>
                                  )
                         } else {
                             return (
-                                <Card  name={d.name} weight_min={d.weight_min} weight_max={d.weight_max} temperaments={d.temperaments[0]?.name} key={d.id} img={d.img} id={d.id}/>                           
+                                <Card  name={d.name} weight_min={d.weight_min} weight_max={d.weight_max} temperaments={d.temperaments[0]?.name} key={d.id} img={d.img} id={d.id} handleRemove={handleRemove}/>                           
                                 )
                             }
                         }                
                         return (
-                                <Card  name={d.name} weight_min={d.weight_min} weight_max={d.weight_max} temperaments={d.temperaments} key={d.id} img={d.img} id={d.id}/>                            
+                                <Card  name={d.name} weight_min={d.weight_min} weight_max={d.weight_max} temperaments={d.temperaments} key={d.id} img={d.img} id={d.id} handleRemove={handleRemove}/>                            
                     )    
                 })
             }                

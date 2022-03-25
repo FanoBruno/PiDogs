@@ -35,3 +35,14 @@
     margin-top: 5px;
     cursor: pointer;
 }
+
+.remove{
+    position: absolute;
+    background: transparent;
+    border-radius: 10px;
+    border-color: rgb(211, 211, 191);
+    align-items: center;
+    margin-left: -135px;
+    margin-top: 5px;
+    cursor: pointer;
+}
